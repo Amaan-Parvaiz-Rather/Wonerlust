@@ -1,0 +1,70 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+  <form
+    action="/listing/<%= list._id %>?_method=PUT"
+    method="post"
+    class="needs-validation"
+    novalidate
+    enctype="multipart/form-data">
+    <h2><%= list.title %></h2>
+    <img src="<%= originalImage %>" alt="<%= list.title %> image" class="title-image" />
+    <br />
+    <br />
+    <div>
+      <label for="image" class="form-label">Image Link</label>
+      <input type="file" name="image" id="image" class="form-control" style="width: 800px" />
+    </div>
+    <div>
+      <br />
+      <label for="description" class="mb-3 form-label">Description</label>
+      <textarea name="description" id="description" class="form-control" rows="3" required>
+<%= list.description %></textarea
+      >
+      <div class="valid-feedback">It's a good description</div>
+      <div class="invalid-feedback">Please enter a description.</div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-7">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="location"
+          id="location"
+          value="<%= list.location %>"
+          class="form-control"
+          placeholder="Srinagar, Jammu and kashmir"
+          required />
+        <div class="invalid-feedback">Location name should be valid</div>
+      </div>
+      <div class="col-md-5">
+        <label for="country" class="form-label">Country</label>
+        <input
+          type="text"
+          name="country"
+          id="country"
+          class="form-control"
+          value="<%= list.country %>"
+          placeholder="India"
+          required />
+        <div class="invalid-feedback">Country name should be valid</div>
+      </div>
+    </div>
+    <br />
+    <div class="col-lg-2">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="number"
+        name="price"
+        id="price"
+        class="form-control"
+        value="<%= list.price %>"
+        required />
+      <div class="invalid-feedback">Price should be valid</div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-dark add-btn">Add</button>
+    <br />
+    <br />
+  </form>
+</body>

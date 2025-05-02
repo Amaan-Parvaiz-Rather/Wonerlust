@@ -1,0 +1,185 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+  #filters {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+    -webkit-overflow-scrolling: touch; /* Safari */
+    border-right: 2px solid #eaeaea;
+    border-left: 2px solid #eaeaea;
+  }
+  .filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px 20px;
+    padding: 10px;
+  }
+  .filter i {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #0a0a0a;
+    opacity: 0.6;
+  }
+  .filter p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a0a0a;
+    opacity: 0.6;
+    margin: 0;
+  }
+
+  .filter:hover {
+    cursor: pointer;
+    i,
+    p {
+      opacity: 1;
+    }
+  }
+  .category-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tax-toogle {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    border: 3px solid #eaeaea;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px 5px;
+    margin: 10px;
+  }
+  .tax-toogle .form-check-label {
+    font-size: 14px;
+    font-weight: 600 !important;
+    color: #0a0a0a;
+    margin-right: 10px;
+  }
+  .tax-toogle .form-check-input {
+    width: 50px;
+    height: 30px;
+    border-radius: 50px;
+    border: 4px solid #eaeaea;
+    cursor: pointer;
+  }
+
+  .tax-toogle .form-check-input:checked {
+    background-color: #cccccc;
+    border-radius: 50px;
+  }
+  .taxes {
+    display: none;
+  }
+</style>
+<body>
+  <div class="category-container">
+    <div id="filters">
+      <div class="filter">
+        <i class="fa-solid fa-fire"></i>
+        <p>Trending</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-ticket"></i>
+        <p>Icons</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-bed"></i>
+        <p>Rooms</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-umbrella-beach"></i>
+        <p>Tropical</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-key"></i>
+        <p>New</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-star"></i>
+        <p>Luxury</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-mug-hot"></i>
+        <p>Breakfasts</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-chess-rook"></i>
+        <p>Castle</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-sailboat"></i>
+        <p>Boat</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-mountain-sun"></i>
+        <p>Mountain</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-tree"></i>
+        <p>Forest</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-person-swimming"></i>
+        <p>Pool</p>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-plane"></i>
+        <p>Airplane</p>
+      </div>
+    </div>
+    <div class="tax-toogle">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" />
+        <label class="form-check-label" for="flexSwitchCheckChecked">Display the taxes</label>
+      </div>
+    </div>
+  </div>
+  <div class="post_container row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% for(let listing of dataList){ %>
+    <a href="/listing/<%= listing._id %>" class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
+      <div class="card col-md-4">
+        <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing._id %> image" />
+        <div class="card-img-overlay"></div>
+        <div class="card-listing">
+          <h5 class="card-title-index"><%= listing.title %></h5>
+          <!-- <p class="card-text"><%= listing.description %></p> -->
+          <p><b><%= listing.location %>,<%= listing.country %></b></p>
+          <h6>
+            &#x20b9; <%= listing.price.toLocaleString("en-IN") %> / night
+            <i class="taxes">&nbsp; &nbsp; 18% GST</i>
+          </h6>
+          <!-- <a href="/listing/<%= listing._id %>" class="btn btn-primary">View</a> -->
+        </div>
+      </div>
+    </a>
+    <!-- <li><a href="/listing/<%= listing._id %>"><%= listing.title %></a></li> -->
+    <%}%>
+  </div>
+
+  <script>
+    let taxSwitch = document.getElementById('flexSwitchCheckChecked');
+    taxSwitch.addEventListener('change', () => {
+      let tax = document.querySelectorAll('.taxes');
+      if (taxSwitch.checked) {
+        tax.forEach((e) => {
+          e.style.display = 'inline-block';
+        });
+      } else {
+        tax.forEach((e) => {
+          e.style.display = 'none';
+        });
+      }
+    });
+  </script>
+</body>

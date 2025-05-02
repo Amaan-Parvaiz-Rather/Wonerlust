@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.container {
+  flex: 1;
+}
+
+/* Navbar styling */
+.navbar {
+  height: 6rem;
+  background-color: #fff;
+  border-bottom: 2px solid #ebebeb;
+  display: flex;
+  flex-direction: row;
+  justify-content: center !important;
+  align-items: center;
+}
+.fa-compass {
+  color: #fe424d;
+  font-size: 3rem;
+  margin: 0 1rem;
+}
+
+.nav-link {
+  color: #000 !important;
+  font-size: 2.2vw !important;
+  font-weight: 500 !important;
+  margin: 0 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+.nav-link:hover {
+  color: #fe424d !important;
+  transform: scale(1.05);
+}
+.registeration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registeration a {
+  margin: 0 0.5rem;
+}
+.registeration .add-new,
+.registeration .signup-btn {
+  width: max-content !important;
+  color: #fe424d !important;
+  border: 2px solid #fe424d !important;
+  border-radius: 10px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 1.5vw !important;
+}
+
+.registeration .add-new:hover,
+.registeration .signup-btn:hover {
+  background-color: #fe424d !important;
+  color: #fff !important;
+  transform: scale(1) !important;
+}
+
+.registeration .login-btn {
+  width: 100px !important;
+  color: #fff !important;
+  background-color: #fe424d !important;
+  border-radius: 10px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 1.5vw !important;
+}
+.registeration .login-btn:hover {
+  background-color: #fafafa !important;
+  color: #fe424d !important;
+  border: 2px solid #fe424d !important;
+  width: 100px !important;
+  transform: scale(1) !important;
+}
+
+/*Footer styling  */
+.footer {
+  width: 100%;
+  height: min-content;
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-top: 2px solid #ebebeb;
+}
+.footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer ul li {
+  margin-right: 0.6rem;
+}
+.footer ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+.english-btn {
+  border: none;
+  width: 9rem;
+  height: 2.2rem;
+  background-color: #f8f9fa;
+  transition: transform 0.1s;
+}
+.english-btn:hover {
+  transform: scale(1.05);
+  background-color: #e5e5e5;
+  border-radius: 10px;
+}
+.inr {
+  width: 4rem;
+}
+
+.right-side {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.fa-square-facebook,
+.fa-square-twitter,
+.fa-square-instagram {
+  font-size: 2rem;
+}
+
+/* card styling */
+.post_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 35px;
+}
+.row {
+  text-decoration: none;
+  padding: 0;
+}
+.card {
+  border: none !important;
+  cursor: pointer;
+  width: 450px !important;
+}
+
+.card-img-overlay {
+  display: none;
+}
+.card:hover {
+  .card-img-overlay {
+    display: block;
+    opacity: 0.2;
+    background-color: #fff;
+  }
+}
+
+.card img {
+  width: 100% !important;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-listing p {
+  font-size: 0.9em !important;
+  margin: 0;
+}
+
+.card-listing {
+  padding: 10px 0 !important;
+}
+
+/* New post styling */
+label {
+  font-size: 1.3vw !important;
+  font-weight: 400 !important;
+}
+
+.newPostTitle {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.add-btn {
+  background-color: #fe424d !important;
+  width: 100px;
+  border: none !important;
+}
+.title-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  padding: 0 !important;
+  border-radius: 15px !important;
+}
+
+.show-btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1.8rem !important;
+  padding: 30px 0 !important;
+}
+/* home styling */
+
+.home_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  color: #fe424d;
+}
+.home_title h1 {
+  font-size: 12vw;
+  font-weight: 700;
+}
+
+/* alert div styling */
+
+.alert_div {
+  width: 40% !important;
+}
+
+.alert_flex {
+  display: flex;
+  justify-content: center;
+}
+/*  */
+
+.owner {
+  font-size: 1.4vw !important;
+}
+
+.descrption {
+  font-size: 1.5vw !important;
+}
+
+#rating {
+  width: 200px !important;
+  height: 50px !important;
+  margin-left: 15px;
+}
+#rating:hover {
+  cursor: pointer;
+}
+
+.review-title {
+  font-size: 1.5vw !important;
+  font-weight: 500 !important;
+  padding: 1rem 0 !important;
+}
+
+.review_btn {
+  background-color: #1d1d1d !important;
+  margin-left: 10px !important;
+}
+.add-btn:hover {
+  background-color: #1d1d1d !important;
+  color: #fff !important;
+}
+
+.review_btn:hover {
+  background-color: #fe424d !important;
+  color: #fff !important;
+}
+
+.review-card {
+  background-color: #fe424d !important;
+  padding: 0 20px !important;
+  width: 100% !important;
+  height: 100% !important;
+  color: #fafafa !important;
+}
+
+.review-card form {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.review-card form button {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+/* Map styling */
+
+#map {
+  width: 100% !important;
+  height: 50vh !important;
+}
+
+.marker {
+  color: #fff !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+  background-color: #fe424d !important;
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 50% !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0px 0px 5px #000 !important;
+  cursor: pointer !important;
+}
+/* 
+.map-div{
+  margin-left: 0 !important;
+} */

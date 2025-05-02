@@ -1,0 +1,91 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <h2 class="newPostTitle">Add new post</h2>
+  <form action="/listing/new" method="post" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col-md-8 offset-2">
+        <div class="col">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            class="form-control"
+            placeholder="Enter your Title"
+            required />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a title.</div>
+        </div>
+        <br />
+        <div>
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            type="text"
+            name="description"
+            id="description"
+            class="form-control"
+            placeholder="Write a description...."
+            required></textarea>
+          <div class="valid-feedback">It's a good description</div>
+          <div class="invalid-feedback">Please enter a description.</div>
+        </div>
+        <br />
+        <!-- <div class="mb-3">
+          <label for="image" class="form-label">Image URL</label>
+          <input
+            class="form-control"
+            type="text"
+            id="image"
+            name="image"
+            placeholder="Enter your image URL/link" />
+        </div>
+        <br /> -->
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload an image</label>
+          <input class="form-control" type="file" id="image" name="image" required/>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-7">
+            <label for="location" class="form-label">Location</label>
+            <input
+              type="text"
+              name="location"
+              id="location"
+              class="form-control"
+              placeholder="Srinagar, Jammu and kashmir"
+              required />
+            <div class="invalid-feedback">Location name should be valid</div>
+          </div>
+          <div class="col-md-5">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              name="country"
+              id="country"
+              class="form-control"
+              placeholder="India"
+              required />
+            <div class="invalid-feedback">Country name should be valid.</div>
+          </div>
+        </div>
+        <br />
+        <div class="col-lg-3">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            name="price"
+            id="price"
+            class="form-control"
+            placeholder="Enter the price"
+            min="0"
+            required />
+          <div class="invalid-feedback">Please enter a price.</div>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-dark add-btn">Add</button>
+        <br /><br />
+      </div>
+    </div>
+  </form>
+</body>
